@@ -67,5 +67,21 @@ function deleteNode(head, position) {
         current = current.next;
     }
     current.next = current.next.next;
-    return head;    
+    return head;
+}
+
+// Print in Reverse
+function reversePrint(head) {
+    var nodeList = [];
+    var node = head;
+
+
+    while (node !== null){
+        nodeList.push(node.data);
+        node = node.next;
+    }
+
+    while (nodeList.length > 0){
+        console.log(nodeList.pop());
+    }    
 }
