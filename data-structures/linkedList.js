@@ -83,5 +83,30 @@ function reversePrint(head) {
 
     while (nodeList.length > 0){
         console.log(nodeList.pop());
-    }    
+    }
 }
+
+// Compare two linked lists
+function compareLinkedLists( headA, headB) {
+    var nodeA = headA;
+    var nodeB = headB;
+
+
+    if (nodeA === null || nodeB === null) {
+        return 0;
+    }
+    if(nodeA !== null && nodeB !== null){
+        while(nodeA.data === nodeB.data){
+           if(nodeA.next === null){
+              if(nodeB.next === null){
+                 return 1;
+               }else{
+                 return 0;
+              }
+           }
+
+           nodeA = nodeA.next;
+           nodeB = nodeB.next;
+        }
+    }
+    return 0;
